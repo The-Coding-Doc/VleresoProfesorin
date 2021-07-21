@@ -1,0 +1,84 @@
+html, body {
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(155, 207, 197, 0), rgba(155, 207, 197, 0.45));
+  font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+p {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.container-fluid {
+  height: auto;
+}
+
+.leftnav {
+  margin-left: auto;
+}
+
+#logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#loginbtn {
+  margin-right: auto;
+}
+
+#signupbtn {
+  border: 2px solid rgba(155, 207, 197);
+  border-radius: 8px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.mb-3 {
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+}
+
+.form-control {
+  margin-right: 10px;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  width: 500px;
+}
+
+.btn-outline-primary {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#navbarDropdown {
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mycontent {
+  overflow: auto;
+}
+
+.card-body {
+  background-color: rgba(155, 207, 197, 0.3);
+}
+
+.wrapper {
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -250px;
+}
+
+.footer, .push {
+    height: 250px;
+}

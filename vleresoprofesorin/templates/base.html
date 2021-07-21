@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vlereso Profesorin</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'vleresoprofesorin/css/master2.css' %}">
+    <link rel="stylesheet" href="{% static 'css/master.css' %}">
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light mynav">
+      <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav leftnav">
+            <li class="nav-item">
+              <a class="navbar-brand" href="{% url 'home' %}">Kreu</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Universitetet</a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Universiteti i Tiranës</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti Politeknik i Tiranës</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti i Mjekësisë, Tiranë</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti i Sporteve të Tiranës</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti i Arteve	Universitet</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti Bujqësor i Tiranës</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti "Aleksandër Moisiu", Durrës</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti "Aleksandër Xhuvani", Elbasan</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti "Luigj Gurakuqi", Shkodër</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti "Eqrem Çabej", Gjirokastër</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti "Fan S. Noli", Korçë</a></li>
+                <li><a class="dropdown-item" href="#">Universiteti "Ismail Qemali", Vlorë</a></li>
+              </ul>
+            </li>
+          </ul>
+          <a class="navbar-brand" id="logo" href="{% url 'home' %}">
+            <img src="{% static 'images/mainlogo.png' %}" alt="Missing image" width="260px" height="220px">
+          </a>
+          {% if user.is_authenticated %}
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item userbuttons">
+              <a class="nav-link active" href="{% url 'accounts:logout' %}">Logout</a>
+            </li>
+          </ul>
+          {% else %}
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'accounts:login' %}" id="loginbtn">Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="{% url 'accounts:signup' %}" id="signupbtn">Rregjistrohu</a>
+            </li>
+          </ul>
+          {% endif %}
+        </div>
+      </div>
+    </nav>
+
+    <style>@import url('https://fonts.googleapis.com/css2?family=Benne&display=swap');</style>
+
+
+
+    <div class="container text-center mycontent">
+      {% block content %}
+
+      {% endblock %}
+      <div class="wrapper">
+        <div class="card text-center fixed-bottom">
+          <div class="card-header" style="font-family: 'Benne', serif;">
+            <q>Eksperiencat janë mësuesi më i mirë</q><br>
+            <em><i>-Jordan B. Peterson</i></em>
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">Kontakto me Zhvilluesin</h5>
+            <p class="card-text">Për çdo problem ose paqartësi me faqen mund të na kontaktoni duke perdorur butonin më poshtë:</p>
+            <a href="mailto:infovleresoprofesorin@gmail.com" class="btn btn-primary">Kontakto</a>
+          </div>
+          <div class="card-footer text-muted">
+            Copyright © 2021
+          </div>
+        </div>
+        <div class="push"></div>
+      </div>
+      <div class="footer"></div>
+
+    </div>
+
+
+  </body>
+</html>
